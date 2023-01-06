@@ -1,0 +1,1 @@
+{"id":"ef5a1f69-93ac-4bec-88f2-d1c569bcbd58","space":40587,"runtime":"python3.9","name":"lab3_micro","path":"1rba5g","project":"a0idgh6w","account":"144798365827","region":"eu-central-1","deps":["flask","pytrends","requests","pandas","requires.io","pybase64","matplotlib"],"envs":null,"public":true,"log_level":"debug","cron":""}
