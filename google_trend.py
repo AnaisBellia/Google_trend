@@ -57,41 +57,6 @@ def fig_to_base64(fig):
     img.seek(0)
     return base64.b64encode(img.getvalue())
 
-#-------------------------------------------------------------
-# decorator
-# Implement a decorator that logs execution time
-def log_time(func):
-    import time
-    def wrapper(*args, **kwargs):
-        start = time.time()
-        result = func(*args, **kwargs)
-        end = time.time()
-        #return result
-        print("time :" , end-start)
-    return wrapper
-
-# function that loads a text file and counts the number of appearances of a word in the text
-@log_time
-def load_text():
-    # Load the text file
-    with open("shakespear.txt", "r") as f:
-        text = f.read()
-
-    # Count the number of appearances of each word in the text and store it in a dictionary
-    word_count = {}
-    for word in text.split():
-        if word in word_count:
-            word_count[word] += 1
-        else:
-            word_count[word] = 1
-
-    # Convert the dictionary to a pandas dataframe
-    df = pd.DataFrame.from_dict(word_count, orient='index', columns=['count'])
-    df = df.sort_values(by='count', ascending=False)
-    print(df.head(10))
-
-load_text()
-
 if __name__=='__main__':
     app.run(debug=True)
 
